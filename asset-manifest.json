@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-module5-routing/static/css/main.7acaea2f.css",
+    "main.js": "/react-module5-routing/static/js/main.1030b4b4.js",
+    "index.html": "/react-module5-routing/index.html",
+    "main.7acaea2f.css.map": "/react-module5-routing/static/css/main.7acaea2f.css.map",
+    "main.1030b4b4.js.map": "/react-module5-routing/static/js/main.1030b4b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.1030b4b4.js"
+  ]
+}
