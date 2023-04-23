@@ -1,16 +1,22 @@
+import Dogs from "pages/Dogs";
+import DogsDetalis from "pages/DogsDetalis";
+import Home from "pages/Home";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import Gallery from "./Gallery";
+import Subbreeds from "./Subbreeds";
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+      <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="dogs" element={<Dogs />} />
+      <Route path="dogs/:dogId" element={<DogsDetalis />}>
+        <Route path="subbreeds" element={<Subbreeds />} />
+        <Route path="gallery" element={<Gallery />} />
+      </Route>
+    </Route>
+      </Routes>
   );
 };
