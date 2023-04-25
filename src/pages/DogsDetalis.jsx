@@ -1,8 +1,10 @@
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Suspense, useRef } from "react";
+import { Link, Outlet, useParams, useLocation } from "react-router-dom";
 
 const DogsDetalis = () => {
+    const location = useLocation();
+    const backLinkLocationRef = useRef(location.state?.from ?? "/dogs");
     const { dogId } = useParams();
-
     // useEffect(() => {
     //     "HTTP request, if need"
     // }, []);
@@ -10,6 +12,7 @@ const DogsDetalis = () => {
     return (
         <>
             <h1>Dogs Detalis: {dogId}</h1>
+            <Link to={backLinkLocationRef.current}>Back to Collection</Link>
             <ul>
                 <li>
                     <Link to="subbreeds">Subbreeds</Link>
@@ -18,7 +21,9 @@ const DogsDetalis = () => {
                     <Link to="gallery">Gallery</Link>
                 </li>
             </ul>
-            <Outlet />
+            <Suspense fallback={<div>Loading subpage....</div>}>
+                <Outlet />
+            </Suspense>
         </>
     )
 };
